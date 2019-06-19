@@ -33,8 +33,8 @@ void LCD_Char (char char_data)						/* LCD data write function */
 
 void LCD_Init (void)								/* LCD Initialize function */
 {
-	DDRD |= (1<<registerselection)|(1<<enable);		/* Make LCD command port direction as o/p */
-	DDRC = 0xFF;							/* Make LCD data port direction as o/p */
+	PORTD |= (1<<registerselection)|(1<<enable);		/* Make LCD command port direction as o/p */
+	PORTC = 0xFF;							/* Make LCD data port direction as o/p */
 	
 	_delay_ms(20);									/* LCD power up time to get things ready, it should always >15ms */
 	LCD_Command (0x38);								/* Initialize 16X2 LCD in 8bit mode */
